@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock,Paper,Scissors</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#container {
+		    width: 970px;
+		    margin: 0 auto;
+		    background-color: antiquewhite;
+		    border: 3px solid black;
+		    padding: 10px;
+		}
+
+		h1 {
+		    text-align: center;
+		    margin: 30px 0px;			
+		}
+
+		form {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+
+		input[type="submit"] {
+		    border: 1px solid;
+		    border-radius: 4px;
+		    padding: 5px 30px;
+		    box-shadow: 3px 4px 5px 0px black;
+		    margin-right: 10%;
+		    margin-left: 10%;
+		}
+
+		input[type="submit"]:hover {
+			background-color: lightgreen;
+			color: black;
+
+		}
+
+		.resultMessage {
+			margin-left: 40%;
+			margin-bottom: 10%;
+			display: block;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		
+		<div class="scoreboard">
+			<h4>Wins: {{wins}}</h4>
+			<h4>Loses: {{loses}}</h4>
+			<h4>Ties: {{ties}}</h4>
+		</div>
+
+		<h1>Rock Paper Scissors</h1>
+
+		<div class="resultMessage">
+			<p>The computer picked {{computer}}</p>
+			<p>You chose {{p1}}</p>
+			<p>You {{state}}!</p>
+		</div>
+
+		<form action="/process_play" method="POST">
+			<input type="submit" value="Rock" name="rock">
+			<input type="submit" value="Scissors" name="scissors">
+			<input type="submit" value="Paper" name="paper">
+		</form>
+
+
+	</div>
+
+</body>
+</html>
